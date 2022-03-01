@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Icon Keyboard MIDI Demo</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<script src='main.js'></script>
+</head>
+
+<body>
+	<section class="hero">
+		<div class="hero-body">
+			<p class="title">
+				Icon Keyboard MIDI Demo
+			</p>
+			<p class="subtitle">
+				This demonstrates the feedback bug in Icon keyboards.
+			</p>
+		</div>
+	</section>
+	<main class="section">
+		<div id="dErrors">
+		</div>
+		<p id="pLoading">Requesting MIDI access...</p>
+		<div id="dMain" style="display: none">
+			<div class="field">
+				<label class="label">Please select the keyboard</label>
+				<div class="control">
+					<div class="select">
+						<select id="sMidiControllers"></select>
+					</div>
+					<button class="button is-primary" id="bSendMessage">Test</button>
+				</div>
+			</div>
+			<ol>
+				<li>First, please select the keyboard from the list above. If an iCON keyboard is connected, it will
+					have been auto-selected for you.</li>
+				<li>Next, turn the encoder knob on the keyboard to zero.</li>
+				<li>Then, click the test button. That will send a CC message to set the knob to 100%.</li>
+				<li>Observe that the LED encoders indicate that the value is now at 100% (value: 127).</li>
+				<li>Next, turn the knob in either direction. Note that it has now been reset to 0.</li>
+			</ol>
+		</div>
+	</main>
+</body>
+
+</html>
